@@ -1,0 +1,32 @@
+{
+    "ConfigVersion": 10,
+    "Checksum": "04cb38937f6c8b1f87759967085514a464fd3ae2dc016f2573bdb27586edcbc0",
+    "DEVICE": [
+        {
+            "DeviceType": "M1A",
+            "RuntimeAgent": "DEEPX",
+            "SupportedDeviceTypes": "DEEPX/M1A"
+        }
+    ],
+    "PRE_PROCESS": [
+        {
+            "InputN": 1,
+            "InputH": 640,
+            "InputW": 640,
+            "InputC": 3,
+            "InputQuantEn": true
+        }
+    ],
+    "MODEL_PARAMETERS": [
+        {
+            "ModelPath": "yolov8n_coco--640x640_quant_deepx_m1a_1.dxnn"
+        }
+    ],
+    "POST_PROCESS": [
+        {
+            "OutputPostprocessType": "DetectionYoloV8",
+            "OutputNumClasses": 80,
+            "LabelsPath": "labels_yolov8n_coco.json"
+        }
+    ]
+}
