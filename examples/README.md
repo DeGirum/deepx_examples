@@ -1,0 +1,60 @@
+# **Examples for DeGirum PySDK with DeepX Hardware**  
+
+This folder contains multiple Jupyter Notebook examples demonstrating various AI inference use cases using DeGirum PySDK and DeepX hardware. Each notebook showcases different functionalities, from basic inference to advanced AI pipelines.  
+
+## **Getting Started**  
+
+To run these examples, ensure that you have:  
+1. Installed the required dependencies from `requirements.txt`.  
+2. Set up your **virtual environment** and added it to Jupyter (as explained in the main [README](../README.md#2-create-a-virtual-environment)).  
+3. Started Jupyter Notebook:  
+
+   ```bash
+   jupyter notebook
+   ```
+
+Then, navigate to the `examples` folder in Jupyter and open any of the notebooks.
+
+---
+
+## **List of Examples**  
+
+Each notebook focuses on a specific AI application:
+
+| Notebook | Description |
+|----------|------------|
+| **001_quick_start.ipynb** | A simple introduction to running inference using DeGirum PySDK. |
+| **002_yolov8.ipynb** | Running different YOLOv8 models on images. |
+| **003_face_detection.ipynb** | Detecting faces and keypoints in images. |
+| **004_rtsp.ipynb** | Performing AI inference on an RTSP video stream. |
+| **005_object_tracking.ipynb** | Tracking objects across video frames. |
+| **006_multi_threading.ipynb** | Running multiple inference tasks in parallel with multi-threading. |
+| **007_model_pipelining.ipynb** | Creating AI pipelines to process multiple models sequentially. |
+| **008_object_detection_class_filtering.ipynb** | Filtering detected objects by class labels. |
+| **009_zone_counting.ipynb** | Counting objects in specific zones of an image or video. |
+| **010_emotion_recognition.ipynb** | Emotion recognition on images. |
+| **011_obb_detection.ipynb** | Oriented bounding box (OBB) detection in images. |
+| **012_blur_objects.ipynb** | Blur detected objects in images. |
+| **013_overlay_effects.ipynb** | Overlay formatting on images. |
+| **014_custom_video_source.ipynb** | Custom video generator. |
+
+
+---
+
+## **How to Modify Inference Settings**  
+
+Each notebook is **pre-configured** with default inference settings, including:  
+- **Inference host address** (`@local`, `localhost`, `@cloud`)  
+- **Model zoo location** (`degirum/deepx`, `../models`)  
+- **Target hardware** (`DEEPX/M1A`)  
+
+These values can be modified inside the notebooks if needed.
+
+---
+
+## **Need Help?**  
+
+- Refer to the [main README](../README.md) for installation and setup instructions.  
+- Check the [DeGirum PySDK documentation](https://docs.degirum.com) for more details on AI inference.  
+---
+
