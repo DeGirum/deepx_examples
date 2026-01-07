@@ -1,4 +1,3 @@
-notebook
-ipykernel
 degirum
 degirum_tools
+opencv-python
