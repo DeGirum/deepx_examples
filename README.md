@@ -1,7 +1,7 @@
 
-# **Using DeGirum PySDK, DeGirum Tools, and Deepx Hardware**  
+# **Using DeGirum PySDK, DeGirum Tools, and DEEPX Hardware**  
 
-This repository provides a comprehensive guide on using **DeGirum PySDK**, **DeGirum Tools**, and **Deepx hardware** for efficient AI inference. These tools simplify edge AI development by enabling seamless integration, testing, and deployment of AI models on multiple hardware platforms, including *Deepx M1A**.  
+This repository provides a comprehensive guide on using **DeGirum PySDK**, **DeGirum Tools**, and **DEEPX hardware** for efficient AI inference. These tools simplify edge AI development by enabling seamless integration, testing, and deployment of AI models on multiple hardware platforms, including **DEEPX M1A**.  
 
 ---
 
@@ -10,8 +10,9 @@ This repository provides a comprehensive guide on using **DeGirum PySDK**, **DeG
 1. [Introduction](#introduction)  
 2. [Prerequisites](#prerequisites)  
 3. [Installation](#installation)  
-4. [Running and Configuring Jupyter Notebooks](#running-and-configuring-jupyter-notebooks) 
-5. [Additional Resources](#additional-resources) 
+4. [DeGirum AI Hub Token Setup](#degirum-ai-hub-token-setup)  
+5. [Running and Configuring Jupyter Notebooks](#running-and-configuring-jupyter-notebooks) 
+6. [Additional Resources](#additional-resources) 
 
 ---
 
@@ -94,14 +95,38 @@ This ensures that Jupyter recognizes the virtual environment as an available ker
 
 ---
 
-### **5. Verify Installation**  
+### **5. Setup DeGirum AI Hub Token**  
 
+If you plan to use **DeGirum AI Hub** for cloud-based inference, you will need to configure an authentication token. This token is **not required** for local inference.
 
+For detailed instructions on how to obtain and manage your AI Hub tokens, please refer to the official documentation:  
+👉 [**Managing AI Hub Tokens**](https://docs.degirum.com/pysdk/user-guide-pysdk/command-line-interface#manage-ai-hub-tokens)
 
+---
+
+### **6. Verify Installation**  
+
+To confirm that DeGirum PySDK and all dependencies are properly installed, run the following command in your activated virtual environment:
+
+```bash
+python -c "import degirum; print(f'DeGirum PySDK version: {degirum.__version__}')"
+```
+
+If the installation was successful, you should see the version number of DeGirum PySDK printed to the console.
+
+If you have a **local DEEPX hardware installation**, verify that the hardware is detected by running:
+
+```bash
+degirum sys-info
+```
+
+This command will display system information and list all available AI inference runtimes. Check the output to confirm that DEEPX is listed among the available runtimes.
+
+---
 
 ## **Running and Configuring Jupyter Notebooks**  
 
-This repository includes an `examples` folder containing multiple use case examples demonstrating how to run AI inference using DeGirum PySDK and Deepx hardware. You can find detailed descriptions and usage instructions for each example in the [**Examples README**](examples/README.md).  
+This repository includes an `examples` folder containing multiple use case examples demonstrating how to run AI inference using DeGirum PySDK and DEEPX hardware. You can find detailed descriptions and usage instructions for each example in the [**Examples README**](examples/README.md).  
 
 ### **1. Start Jupyter Notebook**  
 Now that the Jupyter environment is set up, you can start Jupyter Notebook:  
@@ -127,7 +152,7 @@ Below are the default settings you will find in the notebooks, which you can adj
 The `inference_host_address` determines where AI inference will be executed:  
 
 ```python
-# Use local inference (e.g., when running on a device equipped with Deepx M1A)
+# Use local inference (e.g., when running on a device equipped with DEEPX M1A)
 inference_host_address = "@local"
 
 # Alternative: Specify a local server by IP or hostname
@@ -141,7 +166,7 @@ inference_host_address = "@local"
 The `zoo_url` specifies where AI models are stored:  
 
 ```python
-# Use DeGirum’s cloud model zoo (recommended for Deepx models)
+# Use DeGirum's cloud model zoo (recommended for DEEPX models)
 zoo_url = "degirum/deepx"
 
 # Alternative: Use a local directory containing models
@@ -149,7 +174,7 @@ zoo_url = "degirum/deepx"
 ```  
 
 #### **Set Authentication Token**  
-The `token` is required only for cloud inference with DeGirum AI Hub:  
+The `token` is required only for cloud inference with DeGirum AI Hub. See the [**DeGirum AI Hub Token Setup**](#degirum-ai-hub-token-setup) section for instructions on how to obtain and configure your token.
 
 ```python
 # No token needed for local inference
@@ -163,7 +188,7 @@ token = ''
 The `device_type` defines the hardware used for inference:  
 
 ```python
-# Default: Deepx M1A device
+# Default: DEEPX M1A device
 device_type = "DEEPX/M1A"
 ```  
 ---

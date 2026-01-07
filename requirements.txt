@@ -1,0 +1,4 @@
+notebook
+ipykernel
+degirum
+degirum_tools
